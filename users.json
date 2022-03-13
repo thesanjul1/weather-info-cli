@@ -1,0 +1,20 @@
+{
+  "user": [
+    {
+      "username": "raju",
+      "passkey": "489f3692b9eef815408f32d6f1856383a7f2003cd693e886b14a307110adb095"
+    },
+    {
+      "username": "sanjul",
+      "passkey": "7aba57c979cb07aa983e638462816c35cf18dc375deb72339b60252cd3537a0f"
+    },
+    {
+      "username": "admin",
+      "passkey": "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918"
+    },
+    {
+      "username": "test",
+      "passkey": "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08"
+    }
+  ]
+}
