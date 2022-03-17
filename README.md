@@ -37,7 +37,7 @@ To run this project, you will need to add api key
 
 - Open apikey.json file
 
-- add appid value (replace null with your <api_key>
+- add appid value (replace null with your <api_key>)
 example:
 
 `{ "appid" : "5934e584ef6411225b1444df91c123c4" }`
