@@ -138,13 +138,16 @@ class ManageUser:
                                         user["passkey"]=newpasskey
                                         update = True
                                     if newusername:
-                                        user["username"]=newusername
-                                        #if target user is currently logged in
-                                        if self.__user.getUserName() == username:
-                                            ManageUser.__user.setUserName(user["username"])
-                                            self.__setCookie(self.__user.getUserName())
-                                        username=user["username"]
-                                        update = True
+                                        if self.userExist(newusername):
+                                            raise Exception(f"User {newusername} already exist.")
+                                        else:
+                                            user["username"]=newusername
+                                            #if target user is currently logged in
+                                            if self.__user.getUserName() == username:
+                                                ManageUser.__user.setUserName(user["username"])
+                                                self.__setCookie(self.__user.getUserName())
+                                            username=user["username"]
+                                            update = True
                                         
                                 except Exception as e:
                                     raise Exception(e)
@@ -249,3 +252,14 @@ class ManageUser:
                 raise Exception("username required.")
         except Exception as e:
             raise Exception("Session Update Failed.",e)
+    #check username already taken or not
+    def userExist(self,username):
+        if self.__user:
+            db = self.__getUsersData()
+            if db:
+                for user in db:
+                    if user["username"]==username:
+                        return True
+                return False
+        else:
+            raise Exception("Please login first.")
